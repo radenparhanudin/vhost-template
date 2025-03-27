@@ -6,7 +6,7 @@ server {
   {{ssl_certificate_key}}
   {{ssl_certificate}}
   {{server_name}}
-  root {{root}}/frontend/dist;
+  root {{ganti_root_dir}}/frontend/dist;
 
   {{nginx_access_log}}
   {{nginx_error_log}}
@@ -21,7 +21,7 @@ server {
   }
 
   location /api {
-    alias {{root}}/backend/public;
+    alias {{ganti_root_dir}}/backend/public;
     try_files $uri $uri/ @api;
 
     location ~ \.php$ {
